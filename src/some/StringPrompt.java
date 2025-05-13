@@ -1,8 +1,7 @@
 package some;
 
 
-public class StringPrompt extends Handler{
-    String prompt;
+public class StringPrompt extends Handler<String>{
     boolean allowNull;
 
     public StringPrompt(String prompt, boolean allowNull){
@@ -11,17 +10,14 @@ public class StringPrompt extends Handler{
     }
 
     @Override
-    public boolean validateInput() {
-        if (!allowNull && textField.getText().isEmpty()) {
+    public boolean validateInputAndSetContent() {
+        if (!allowNull && getTextField().getText().isEmpty()) {
             printError("The field value cannot be empty.");
             return false;
         }
         return true;
     }
 
-    public String getContent(){
-        return textField.getText();
-    }
 
 
 }

@@ -67,12 +67,12 @@ public class App extends Application {
 
     private void check(ActionEvent event){
         ModernInputHandlerDialog modernInputHandlerDialog = new ModernInputHandlerDialog();
-        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name", false));
-        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name", false));
-        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name", false));
-        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name", false));
-        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name", false));
-        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name", false));
+        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name1", false));
+        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name2", false));
+        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name3", false));
+        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name4", false));
+        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name5", false));
+        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name6", false));
         modernInputHandlerDialog.showAndWait();
 
         // System.out.println("Im alive!");

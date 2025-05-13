@@ -6,9 +6,10 @@ import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public abstract class Handler {
-    Text error;
-    TextField textField;
+public abstract class Handler<T> {
+    private T content;
+    private final Text error;
+    private final TextField textField;
     private final BooleanProperty validateState = new SimpleBooleanProperty(false);
     public Handler(String prompt){
         error = new Text();
@@ -17,7 +18,7 @@ public abstract class Handler {
         textField.setPromptText(prompt);
         textField.setStyle("-fx-background-color:  #37373E; -fx-text-fill:  #FFFFFF;");
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (validateInput()){
+            if (validateInputAndSetContent()){
                 validateState.set(true);
                 printError("");
             } else {
@@ -26,17 +27,35 @@ public abstract class Handler {
         });
     }
 
+    
+
     public BooleanProperty validateStateProperty() { return validateState; }
 
     public boolean getValidateStateProperty(){ return validateState.get(); }
 
-    public abstract boolean validateInput();
+    public abstract boolean validateInputAndSetContent();
+
+    public T getContent() {
+        return content;
+    };
+
+    protected void setContent(T content){
+        this.content = content;
+    }
 
     protected void printError(String error){
         this.error.setText(error);
     }
 
-    public Node[] getNodes(){
+    protected Node[] getNodes(){
         return new Node[]{error, textField};
+    }
+
+    protected Text getError() {
+        return error;
+    }
+
+    protected TextField getTextField() {
+        return textField;
     }
 }
