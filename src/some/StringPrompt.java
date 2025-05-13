@@ -19,5 +19,9 @@ public class StringPrompt extends Handler{
         return true;
     }
 
+    public String getContent(){
+        return textField.getText();
+    }
+
 
 }
