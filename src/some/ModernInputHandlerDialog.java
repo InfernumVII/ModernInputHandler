@@ -32,7 +32,7 @@ public class ModernInputHandlerDialog {
         StackPane.setAlignment(vBox, Pos.TOP_LEFT);
         StackPane.setMargin(vBox, new Insets(20, 20, 20, 20));
         root = new StackPane(vBox);
-        root.setMinWidth(300);
+        root.setMinWidth(500);
         root.setStyle("-fx-background-color: #28272F;");
     }
 

@@ -24,7 +24,7 @@ public class FloatPrompt extends Handler<Float> {
             float inputParsed = Float.parseFloat(finalInput);
 
             if (inputParsed <= min || inputParsed > max) {
-                printError(String.format("The number must be between %s и %s.\n", min, max));
+                printError(String.format("The number must be between %s и %s.", min, max));
                 return false;
             }
             setContent(inputParsed);

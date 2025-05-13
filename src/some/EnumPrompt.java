@@ -30,7 +30,7 @@ public class EnumPrompt<E extends Enum<E>> extends Handler<E> {
                 return true;
             }
         }
-        printError(String.format("Поле должно быть одним из вариантов: (%s)", Arrays.toString(enums))); 
+        printError(String.format("The field should be one of the options: (%s)", Arrays.toString(enums))); 
         return false;
     }
 

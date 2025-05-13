@@ -30,13 +30,13 @@ public class LongPrompt extends Handler<Long> {
             long inputParsed = Long.parseLong(input);
 
             if (inputParsed <= min || inputParsed > max) {
-                printError(String.format("The number must be between %s and %s.\n", min, max));
+                printError(String.format("The number must be between %s and %s.", min, max));
                 return false;
             }
             setContent(inputParsed);
             return true; 
         } catch (NumberFormatException e) {
-            printError(String.format("The number must be between %s and %s.\n", min, max));
+            printError(String.format("The number must be between %s and %s.", min, max));
             return false;
         }
     }

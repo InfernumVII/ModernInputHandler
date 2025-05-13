@@ -24,9 +24,12 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+import some.EnumPrompt;
 import some.Handler;
+import some.LongPrompt;
 import some.ModernInputHandlerDialog;
 import some.StringPrompt;
+import some.TestEnum;
 
 
 public class App extends Application {
@@ -73,6 +76,8 @@ public class App extends Application {
         modernInputHandlerDialog.addHandler(new StringPrompt("Enter name4", false));
         modernInputHandlerDialog.addHandler(new StringPrompt("Enter name5", false));
         modernInputHandlerDialog.addHandler(new StringPrompt("Enter name6", false));
+        modernInputHandlerDialog.addHandler(new EnumPrompt<TestEnum>("Введите ", TestEnum.class, false));
+        modernInputHandlerDialog.addHandler(new LongPrompt("КК", false, 10, 100));
         modernInputHandlerDialog.showAndWait();
 
         // System.out.println("Im alive!");
