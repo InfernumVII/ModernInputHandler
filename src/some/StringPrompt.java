@@ -11,10 +11,12 @@ public class StringPrompt extends Handler<String>{
 
     @Override
     public boolean validateInputAndSetContent() {
-        if (!allowNull && getTextField().getText().isEmpty()) {
+        final String input = getTextField().getText();
+        if (!allowNull && input.isEmpty()) {
             printError("The field value cannot be empty.");
             return false;
         }
+        setContent(input);
         return true;
     }
 

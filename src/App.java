@@ -70,7 +70,8 @@ public class App extends Application {
 
     private void check(ActionEvent event){
         ModernInputHandlerDialog modernInputHandlerDialog = new ModernInputHandlerDialog();
-        modernInputHandlerDialog.addHandler(new StringPrompt("Enter name1", false));
+        StringPrompt rss = new StringPrompt("Enter name1", false);
+        modernInputHandlerDialog.addHandler(rss);
         modernInputHandlerDialog.addHandler(new StringPrompt("Enter name2", false));
         modernInputHandlerDialog.addHandler(new StringPrompt("Enter name3", false));
         modernInputHandlerDialog.addHandler(new StringPrompt("Enter name4", false));
@@ -79,6 +80,7 @@ public class App extends Application {
         modernInputHandlerDialog.addHandler(new EnumPrompt<TestEnum>("Введите ", TestEnum.class, false));
         modernInputHandlerDialog.addHandler(new LongPrompt("КК", false, 10, 100));
         modernInputHandlerDialog.showAndWait();
+        System.out.println(rss.getContent());
 
         // System.out.println("Im alive!");
         // Dialog<String> customDialog = new Dialog<>();
