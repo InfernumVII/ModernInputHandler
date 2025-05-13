@@ -1,25 +1,20 @@
 package some;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Stream;
 
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class ModernInputHandlerDialog {
-    private List<Handler> handlers = new ArrayList<Handler>();
+    private List<Handler<?>> handlers = new ArrayList<>();
     private VBox vBox;
     private StackPane root;
     private Button submitButton = new Button("Submit");
@@ -36,7 +31,7 @@ public class ModernInputHandlerDialog {
         root.setStyle("-fx-background-color: #28272F;");
     }
 
-    public void addHandler(Handler handler){
+    public void addHandler(Handler<?> handler){
         handler.validateStateProperty().addListener((observable, oldValue, newValue) -> {
             checkAllHandlersReady();
         });

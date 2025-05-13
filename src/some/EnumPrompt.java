@@ -1,7 +1,6 @@
 package some;
 
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 public class EnumPrompt<E extends Enum<E>> extends Handler<E> {
     private boolean allowNull;
